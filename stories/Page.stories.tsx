@@ -1,8 +1,10 @@
 import React from 'react';
+import { withDocs } from 'storybook-readme';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Page } from './Page';
 import * as HeaderStories from './Header.stories';
+import Readme from './README.md';
 
 export default {
   title: 'Example/Page',
@@ -16,6 +18,8 @@ LoggedIn.args = {
   // More on composing args: https://storybook.js.org/docs/react/writing-stories/args#args-composition
   ...HeaderStories.LoggedIn.args,
 };
+
+export const Initial = withDocs(Readme, () => <LoggedIn />)
 
 export const LoggedOut = Template.bind({});
 LoggedOut.args = {
